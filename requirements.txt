@@ -1,0 +1,53 @@
+# Flow State Music Player Dependencies
+
+# Core Audio Processing & Metadata
+numpy>=1.21.0
+scipy>=1.7.0
+librosa>=0.9.1 # Updated for latest features if any
+sounddevice>=0.4.4
+soundfile>=0.10.3
+mutagen>=1.45.1
+
+# UI & Visualization (Core Tkinter is part of Python standard lib)
+matplotlib>=3.5.0
+Pillow>=9.0.0 # PIL
+moderngl>=5.7.0 # Updated for potential fixes/features
+PyGLM>=2.5.6 # glm for moderngl examples (check version compatibility with moderngl)
+
+# Machine Learning & AI (Core set, specific models might add more)
+scikit-learn>=1.0.2
+# tensorflow>=2.9.0 # Make TF optional or ensure it's needed by a specific feature
+nltk>=3.7
+word2number>=1.1
+
+# Web & Networking
+aiohttp>=3.8.1
+websockets>=10.3 # For CollaborationServer & MobileServer if it also uses raw WS
+netifaces>=0.11.0
+zeroconf>=0.38.7 # Updated for mDNS service discovery
+qrcode[pil]>=7.3.1 # Ensure Pillow extra for qrcode image generation
+
+# Voice Control
+SpeechRecognition>=3.8.1
+pyttsx3>=2.90
+# PyAudio is often a SpeechRecognition dependency for microphone access on some platforms.
+# If `pip install SpeechRecognition` doesn't pull it and mic fails, install explicitly:
+# pyaudio>=0.2.11
+
+# Security & Tokens
+cryptography>=37.0.0 # For Fernet encryption
+python-jose[cryptography]>=3.3.0 # For JWT handling (includes PyJWT or uses its own)
+
+# Text Processing (for IntentParser, etc.)
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.12.2 # Optional: speeds up fuzzywuzzy significantly
+
+# Utilities
+# python-dotenv>=0.20.0 # If using .env files for configuration (good for dev)
+# joblib>=1.1.0 # If scikit-learn models are saved/loaded with joblib
+# pandas>=1.4.0 # If data analysis or AI features require it heavily
+
+# Removed pygame as it's no longer the core audio playback engine.
+# It's still used by flow_state_advanced_viz.py for windowing.
+# If advanced_viz is optional, pygame could be too.
+pygame>=2.1.2
